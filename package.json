@@ -12,14 +12,9 @@
     "format": "prettier --write '**/*.js'",
     "test": "mocha src",
     "build": "rm -rf dist && rollup -c rollup.config.js",
-    "prepublishOnly": "yarn build"
+    "prepublishOnly": "npm run build"
   },
-  "keywords": [
-    "router",
-    "dependable",
-    "minimal",
-    "tiny"
-  ],
+  "keywords": ["router", "dependable", "minimal", "tiny"],
   "author": "Sune Simonsen <sune@we-knowhow.dk>",
   "license": "MIT",
   "bugs": "https://github.com/sunesimonsen/dependable-nano-router/issues",
