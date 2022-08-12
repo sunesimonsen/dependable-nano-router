@@ -7,7 +7,11 @@ integration for the [nano-router](https://github.com/sunesimonsen/nano-router/tr
 ## Installation
 
 ```sh
+# npm
 npm install @nano-router/history @dependable/nano-router
+
+# yarn
+yarn add @nano-router/history @dependable/nano-router
 ```
 
 ## Usage
