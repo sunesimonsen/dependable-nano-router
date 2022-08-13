@@ -1,13 +1,22 @@
 import { html } from "@dependable/view";
 import { route, location, params, queryParams } from "./state.js";
+import { isEqual } from "./isEqual.js";
 
 export class Routing {
   constructor({ router }) {
     this.updateRouting = () => {
-      route(router.route);
-      location(router.location);
-      params(router.params);
-      queryParams(router.queryParams);
+      if (route() !== router.route) {
+        route(router.route);
+      }
+      if (!isEqual(location(), router.location)) {
+        location(router.location);
+      }
+      if (!isEqual(params(), router.params)) {
+        params(router.params);
+      }
+      if (!isEqual(queryParams(), router.queryParams)) {
+        queryParams(router.params);
+      }
     };
   }
 
