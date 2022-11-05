@@ -23,17 +23,7 @@ export class Link {
     return this.router.createUrl(this.props);
   }
 
-  render({
-    route,
-    params,
-    queryParams,
-    hash,
-    state,
-    replace,
-    target,
-    children,
-    ...other
-  }) {
+  render({ target, children, ...other }) {
     if (typeof target === "string") {
       return html`
         <a
