@@ -1,7 +1,7 @@
 {
   "type": "module",
   "name": "@dependable/nano-router",
-  "version": "0.3.0",
+  "version": "0.4.0",
   "description": "@dependable/view integration for @nano-router/router",
   "module": "./src/index.js",
   "exports": {
@@ -14,7 +14,12 @@
     "build": "rm -rf dist && rollup -c rollup.config.js",
     "prepublishOnly": "npm run build"
   },
-  "keywords": ["router", "dependable", "minimal", "tiny"],
+  "keywords": [
+    "router",
+    "dependable",
+    "minimal",
+    "tiny"
+  ],
   "author": "Sune Simonsen <sune@we-knowhow.dk>",
   "license": "MIT",
   "bugs": "https://github.com/sunesimonsen/dependable-nano-router/issues",
