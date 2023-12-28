@@ -15,7 +15,7 @@ export class Routing {
         params(router.params);
       }
       if (!isEqual(queryParams(), router.queryParams)) {
-        queryParams(router.params);
+        queryParams(router.queryParams);
       }
     };
   }
