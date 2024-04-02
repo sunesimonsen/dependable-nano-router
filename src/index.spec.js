@@ -1,6 +1,6 @@
 import unexpected from "unexpected";
 import unexpectedDom from "unexpected-dom";
-import { html, render } from "@dependable/view";
+import { h, render } from "@dependable/view";
 import { flush } from "@dependable/state";
 import { createMemoryHistory } from "@nano-router/history";
 import {
@@ -26,26 +26,30 @@ const routes = new Routes(
 
 class NewView {
   render() {
-    return html`<div data-test-id="new-view" />`;
+    return h("div", { "data-test-id": "new-view" });
   }
 }
 
 class PostsView {
   render() {
-    return html`
-      <${Link}
-        data-test-id="external"
-        route="external"
-        params=${{ id: 42 }}
-        target="_blank"
-      >
-        External
-      <//>
-      <${Link} data-test-id="new" route="posts/new">New post<//>
-      <${Link} data-test-id="new-open" route="posts/new" target="_blank">
-        New post (new window)
-      <//>
-    `;
+    return [
+      h(
+        Link,
+        {
+          "data-test-id": "external",
+          route: "external",
+          params: { id: 42 },
+          target: "_blank",
+        },
+        "External"
+      ),
+      h(Link, { "data-test-id": "new", route: "posts/new" }, "New post"),
+      h(
+        Link,
+        { "data-test-id": "new-open", route: "posts/new", target: "_blank" },
+        "New post (new window)"
+      ),
+    ];
   }
 }
 
@@ -53,9 +57,9 @@ class RootView {
   render() {
     switch (route()) {
       case "posts/new":
-        return html`<${NewView} />`;
+        return h(NewView);
       default:
-        return html`<${PostsView} />`;
+        return h(PostsView);
     }
   }
 }
@@ -69,7 +73,7 @@ describe("Link", () => {
 
     const router = new Router({ routes, history });
 
-    render(html`<${Routing} router=${router}><${RootView} /><//>`, container);
+    render(h(Routing, { router }, h(RootView)), container);
   });
 
   it("sets the href", () => {
