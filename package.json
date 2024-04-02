@@ -14,12 +14,7 @@
     "build": "rm -rf dist && rollup -c rollup.config.js",
     "prepublishOnly": "npm run build"
   },
-  "keywords": [
-    "router",
-    "dependable",
-    "minimal",
-    "tiny"
-  ],
+  "keywords": ["router", "dependable", "minimal", "tiny"],
   "author": "Sune Simonsen <sune@we-knowhow.dk>",
   "license": "MIT",
   "bugs": "https://github.com/sunesimonsen/dependable-nano-router/issues",
@@ -32,11 +27,9 @@
     "@dependable/state": ">= 0.18"
   },
   "devDependencies": {
-    "@babel/core": "^7.12.10",
     "@dependable/state": "^0.20.0",
     "@dependable/view": "^0.19.2",
     "@nano-router/history": "^2.11.0",
-    "@rollup/plugin-babel": "^5.3.0",
     "@rollup/plugin-node-resolve": "^15.2.3",
     "eslint": "^8.17.0",
     "eslint-config-prettier": "^8.5.0",
