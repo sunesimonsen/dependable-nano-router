@@ -1,4 +1,4 @@
-import { html } from "@dependable/view";
+import { h } from "@dependable/view";
 import { route, location, params, queryParams } from "./state.js";
 import { isEqual } from "./isEqual.js";
 
@@ -30,6 +30,6 @@ export class Routing {
   }
 
   render({ router, children }) {
-    return html`<Context router=${router}>${children}</Context>`;
+    return h("Context", { router }, ...children);
   }
 }

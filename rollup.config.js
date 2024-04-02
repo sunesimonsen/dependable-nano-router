@@ -2,22 +2,7 @@ import { nodeResolve } from "@rollup/plugin-node-resolve";
 import { terser } from "rollup-plugin-terser";
 import { babel } from "@rollup/plugin-babel";
 
-const plugins = [
-  nodeResolve(),
-  babel({
-    babelHelpers: "bundled",
-    plugins: [
-      [
-        "htm",
-        {
-          import: "@dependable/view",
-          useBuiltIns: true,
-          useNativeSpread: true,
-        },
-      ],
-    ],
-  }),
-];
+const plugins = [nodeResolve()];
 
 const minifyPlugins = [
   terser({
