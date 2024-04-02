@@ -27,7 +27,6 @@ export class Link {
     const props = {
       href: this.href,
       rel: "noopener",
-      target: target,
       onClick: this.onClick,
       ...other,
     };
