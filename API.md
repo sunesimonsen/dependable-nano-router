@@ -21,7 +21,7 @@ It takes a [router](https://github.com/sunesimonsen/nano-router/tree/master/pack
 Creating a router for the browser history:
 
 ```js
-import { html } from "@dependable/view";
+import { html } from "@dependable/htm";
 import { Router, Routing } from "@dependable/nano-router";
 import { createBrowserHistory } from "@nano-router/history";
 
@@ -38,7 +38,7 @@ class App {
 Creating a router for a memory history useful for testing:
 
 ```js
-import { html } from "@dependable/view";
+import { html } from "@dependable/htm";
 import { Router, Routing } from "@dependable/nano-router";
 import { createMemoryHistory } from "@nano-router/history";
 
@@ -57,7 +57,7 @@ class App {
 A link component that uses the routes to set the `href`.
 
 ```js
-import { html } from "@dependable/view";
+import { html } from "@dependable/htm";
 import { Link } from "@dependable/nano-router";
 
 class CreatePostLink {
@@ -70,7 +70,7 @@ class CreatePostLink {
 You can provide anything that is accepted by the [router.navigate](https://github.com/sunesimonsen/nano-router/blob/master/packages/router/API.md#navigate)
 
 ```js
-import { html } from "@dependable/view";
+import { html } from "@dependable/htm";
 import { Link } from "@dependable/nano-router";
 
 class EditPostLink {

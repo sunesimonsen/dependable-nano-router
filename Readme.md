@@ -34,7 +34,8 @@ configuration.
 ### Add the router to your application
 
 ```js
-import { html, render } from "@dependable/view";
+import { render } from "@dependable/view";
+import { html } from "@dependable/htm";
 import { Router } from "@dependable/nano-router";
 import { createBrowserHistory } from "@nano-router/history";
 
@@ -61,7 +62,7 @@ render(html`<${App} />`, document.getElementById("app"));
 
 ```js
 import { route } from "@dependable/nano-router";
-import { html } from "@dependable/view";
+import { html } from "@dependable/htm";
 import { PostNew } from "./PostNew";
 import { PostEdit } from "./PostEdit";
 import { PostList } from "./PostList";
@@ -93,7 +94,7 @@ export class RootView {
 The routing information in available as observables `route`, `params`, `queryParams` and `location`.
 
 ```js
-import { html } from "@dependable/view";
+import { html } from "@dependable/htm";
 import { Link, params } from "@dependable/nano-router";
 import { savePost, body } from './model.js'
 
