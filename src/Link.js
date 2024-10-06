@@ -1,4 +1,4 @@
-import { html } from "@dependable/view";
+import { h } from "@dependable/view";
 
 const shouldNavigate = (e) =>
   !e.defaultPrevented &&
@@ -24,22 +24,23 @@ export class Link {
   }
 
   render({ target, children, ...other }) {
-    if (typeof target === "string") {
-      return html`
-        <a
-          href=${this.href}
-          rel="noopener"
-          target=${target}
-          onClick=${this.onClick}
-          ...${other}
-        >
-          ${children}
-        </a>
-      `;
-    } else {
-      return html`
-        <a href=${this.href} onClick=${this.onClick} ...${other}>${children}</a>
-      `;
-    }
+    let targetProps =
+      typeof target === "string"
+        ? {
+            rel: "noopener",
+            target: target,
+          }
+        : {};
+
+    return h(
+      "a",
+      {
+        href: this.href,
+        onClick: this.onClick,
+        ...targetProps,
+        ...other,
+      },
+      children
+    );
   }
 }
