@@ -1,7 +1,7 @@
 {
   "type": "module",
   "name": "@dependable/nano-router",
-  "version": "0.9.0",
+  "version": "0.10.0",
   "description": "@dependable/view integration for @nano-router/router",
   "module": "./src/index.js",
   "exports": {
